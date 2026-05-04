@@ -41,7 +41,7 @@ bool Circle::contains(const LineSegment& segment) const
 
 double distanceSquared(const Point2D& p1, const Point2D& p2)
 {
-	return pow(p2.x - p1.x, 2) + pow(p2.y - p2.x, 2);
+	return pow(p2.x - p1.x, 2) + pow(p2.y - p2.y, 2);
 }
 
 double distance(const Point2D& p1, const Point2D& p2)
@@ -70,7 +70,7 @@ Circle circleFrom3Points(const Point2D& p1, const Point2D& p2, const Point2D& p3
 	double C = p3.x - p1.x;
 	double D = p3.y - p1.y;
 	double E = A * (p1.x + p2.x) + B * (p1.y + p2.y);
-	double F = C * (p1.x + p3.x) + D * (p1.y + p2.y);
+	double F = C * (p1.x + p3.x) + D * (p1.y + p3.y);
 	double G = 2 * (A * (p3.y - p2.y) - B * (p3.x - p2.x));
 	if (G == 0)
 	{
@@ -80,7 +80,7 @@ Circle circleFrom3Points(const Point2D& p1, const Point2D& p2, const Point2D& p3
 	{
 		double C_x = (D * E - B * F) / G;
 		double C_y = (A * F - C * E) / G;
-		double r = distance({C_x,C_y},p1) / 2;
+		double r = distance({C_x,C_y},p1);
 		return Circle{{C_x, C_y}, r};
 	}
 }
