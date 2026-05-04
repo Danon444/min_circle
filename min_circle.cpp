@@ -111,7 +111,7 @@ Circle minCircleHelper(std::vector<Point2D>& points, std::vector<Point2D> bounda
 				return circleFromDiameter(boundary[0], boundary[1]);
 			case 1:
 				return Circle{boundary[0], 0};
-			case 0:
+			default:
 				return Circle{{0, 0}, 0};
 		}
 	}
