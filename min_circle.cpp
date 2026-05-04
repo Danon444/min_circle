@@ -41,7 +41,7 @@ bool Circle::contains(const LineSegment& segment) const
 
 double distanceSquared(const Point2D& p1, const Point2D& p2)
 {
-	return pow(p2.x - p1.x, 2) + pow(p2.y - p2.y, 2);
+	return pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2);
 }
 
 double distance(const Point2D& p1, const Point2D& p2)
